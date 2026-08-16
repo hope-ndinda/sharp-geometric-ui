@@ -1,0 +1,107 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sg-space-3);
+  font-family: var(--sg-font-family);
+  font-weight: var(--sg-font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch {
+  position: relative;
+  background-color: var(--sg-color-white);
+  border: var(--sg-border-width) solid var(--sg-color-black);
+  box-shadow: var(--sg-shadow-sm);
+  border-radius: var(--sg-radius-none);
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  transition: all var(--sg-transition-fast);
+}
+
+.switch:focus-visible {
+  outline: var(--sg-focus-outline);
+  outline-offset: var(--sg-focus-offset);
+}
+
+.checked {
+  background-color: var(--sg-color-accent);
+  border-color: var(--sg-color-accent);
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-color: var(--sg-color-black);
+  border: var(--sg-border-width) solid var(--sg-color-black);
+  border-radius: var(--sg-radius-none);
+  transition: transform var(--sg-transition-fast), background-color var(--sg-transition-fast);
+}
+
+.checked .thumb {
+  background-color: var(--sg-color-white);
+  border-color: var(--sg-color-white);
+}
+
+/* Sizes */
+.sm {
+  width: 40px;
+  height: 22px;
+}
+.sm .thumb {
+  width: 14px;
+  height: 14px;
+}
+.sm.checked .thumb {
+  transform: translateX(18px);
+}
+
+.md {
+  width: 52px;
+  height: 28px;
+}
+.md .thumb {
+  width: 20px;
+  height: 20px;
+}
+.md.checked .thumb {
+  transform: translateX(24px);
+}
+
+.lg {
+  width: 64px;
+  height: 34px;
+}
+.lg .thumb {
+  width: 26px;
+  height: 26px;
+}
+.lg.checked .thumb {
+  transform: translateX(30px);
+}
+
+.label {
+  font-size: 0.9375rem;
+  font-weight: var(--sg-font-weight-semibold);
+  color: var(--sg-color-text);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled .switch {
+  cursor: not-allowed;
+  background-color: var(--sg-color-bg-active);
+  border-color: var(--sg-color-border-light);
+}
+
+.disabled .thumb {
+  background-color: var(--sg-color-text-muted);
+  border-color: var(--sg-color-text-muted);
+}

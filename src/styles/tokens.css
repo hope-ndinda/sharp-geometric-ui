@@ -1,0 +1,78 @@
+/* Sharp Geometric Design System Tokens */
+@import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette: Pure Black & White */
+  --sg-color-black: #000000;
+  --sg-color-white: #FFFFFF;
+  
+  /* Accent Color: Electric Blue */
+  --sg-color-accent: #0047FF;
+  
+  /* Semantic Colors */
+  --sg-color-text: #000000;
+  --sg-color-text-inverse: #FFFFFF;
+  --sg-color-text-muted: #666666;
+  --sg-color-error: #FF0000;
+  --sg-color-success: #00AA00;
+  
+  /* Backgrounds */
+  --sg-color-bg: #FFFFFF;
+  --sg-color-bg-inverse: #000000;
+  --sg-color-bg-hover: #F5F5F5;
+  --sg-color-bg-active: #EAEAEA;
+  
+  /* Borders */
+  --sg-color-border: #000000;
+  --sg-color-border-light: #CCCCCC;
+
+  /* Typography */
+  --sg-font-family: 'General Sans', sans-serif;
+  --sg-font-weight-normal: 400;
+  --sg-font-weight-medium: 500;
+  --sg-font-weight-semibold: 600;
+  --sg-font-weight-bold: 700;
+
+  /* Spacing */
+  --sg-space-1: 0.25rem;
+  --sg-space-2: 0.5rem;
+  --sg-space-3: 0.75rem;
+  --sg-space-4: 1rem;
+  --sg-space-6: 1.5rem;
+  --sg-space-8: 2rem;
+  --sg-space-12: 3rem;
+  --sg-space-16: 4rem;
+
+  /* Border Radius - Always Zero for Sharp Geometric */
+  --sg-radius-none: 0px;
+
+  /* Border Width */
+  --sg-border-width: 2px;
+
+  /* Hard Offset Shadows (No Blur) */
+  --sg-shadow-sm: 2px 2px 0px var(--sg-color-black);
+  --sg-shadow-md: 4px 4px 0px var(--sg-color-black);
+  --sg-shadow-lg: 6px 6px 0px var(--sg-color-black);
+  --sg-shadow-accent: 4px 4px 0px var(--sg-color-accent);
+  --sg-shadow-active: 1px 1px 0px var(--sg-color-black);
+
+  /* Focus System */
+  --sg-focus-outline: 3px solid var(--sg-color-accent);
+  --sg-focus-offset: 2px;
+
+  /* Transitions */
+  --sg-transition-fast: 150ms ease;
+  --sg-transition-normal: 250ms ease;
+}
+
+/* Global Reset */
+.sg-root, [data-sharp-geometric-root] {
+  font-family: var(--sg-font-family);
+  color: var(--sg-color-text);
+  background-color: var(--sg-color-bg);
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

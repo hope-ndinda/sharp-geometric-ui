@@ -1,0 +1,167 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sg-space-2);
+  font-family: var(--sg-font-family);
+  font-weight: var(--sg-font-weight-semibold);
+  text-decoration: none;
+  border-style: solid;
+  border-width: var(--sg-border-width);
+  border-radius: var(--sg-radius-none);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  transition: transform var(--sg-transition-fast), box-shadow var(--sg-transition-fast), background-color var(--sg-transition-fast), color var(--sg-transition-fast);
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: var(--sg-focus-outline);
+  outline-offset: var(--sg-focus-offset);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Sizes */
+.sm {
+  padding: var(--sg-space-2) var(--sg-space-4);
+  font-size: 0.875rem;
+  box-shadow: var(--sg-shadow-sm);
+}
+
+.md {
+  padding: var(--sg-space-3) var(--sg-space-6);
+  font-size: 1rem;
+  box-shadow: var(--sg-shadow-md);
+}
+
+.lg {
+  padding: var(--sg-space-4) var(--sg-space-8);
+  font-size: 1.125rem;
+  box-shadow: var(--sg-shadow-lg);
+}
+
+/* Variants */
+.primary {
+  background-color: var(--sg-color-accent);
+  color: var(--sg-color-white);
+  border-color: var(--sg-color-accent);
+  box-shadow: var(--sg-shadow-accent);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--sg-color-accent);
+  color: var(--sg-color-white);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--sg-color-black);
+}
+
+.primary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--sg-shadow-active);
+}
+
+.secondary {
+  background-color: var(--sg-color-black);
+  color: var(--sg-color-white);
+  border-color: var(--sg-color-black);
+  box-shadow: var(--sg-shadow-md);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--sg-color-black);
+  color: var(--sg-color-white);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--sg-color-accent);
+}
+
+.secondary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--sg-shadow-active);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--sg-color-black);
+  border-color: var(--sg-color-black);
+  box-shadow: var(--sg-shadow-md);
+}
+
+.outline:hover:not(:disabled) {
+  background-color: var(--sg-color-bg-hover);
+  color: var(--sg-color-black);
+  border-color: var(--sg-color-black);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--sg-color-black);
+}
+
+.outline:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--sg-shadow-active);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--sg-color-black);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: var(--sg-color-bg-hover);
+  color: var(--sg-color-accent);
+}
+
+.ghost:active:not(:disabled) {
+  background-color: var(--sg-color-bg-active);
+}
+
+.danger {
+  background-color: var(--sg-color-error);
+  color: var(--sg-color-white);
+  border-color: var(--sg-color-error);
+  box-shadow: var(--sg-shadow-md);
+}
+
+.danger:hover:not(:disabled) {
+  background-color: var(--sg-color-error);
+  color: var(--sg-color-white);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--sg-color-black);
+}
+
+.danger:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--sg-shadow-active);
+}
+
+/* Disabled & Loading */
+.disabled, .button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: var(--sg-shadow-sm) !important;
+  background-color: var(--sg-color-bg-active) !important;
+  border-color: var(--sg-color-border-light) !important;
+  color: var(--sg-color-text-muted) !important;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 0;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

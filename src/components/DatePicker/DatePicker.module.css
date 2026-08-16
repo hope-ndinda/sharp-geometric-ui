@@ -1,0 +1,170 @@
+.container {
+  position: relative;
+  display: inline-block;
+  font-family: var(--sg-font-family);
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  border: var(--sg-border-width) solid var(--sg-color-black);
+  background-color: var(--sg-color-white);
+  box-shadow: var(--sg-shadow-sm);
+  border-radius: var(--sg-radius-none);
+  padding: 0.2rem 0.6rem;
+  transition: all var(--sg-transition-fast);
+}
+
+.inputGroup:focus-within {
+  outline: var(--sg-focus-outline);
+  outline-offset: var(--sg-focus-offset);
+}
+
+.input {
+  border: none;
+  background: transparent;
+  padding: 0.45rem 0.5rem;
+  font-family: var(--sg-font-family);
+  font-size: 0.9375rem;
+  font-weight: var(--sg-font-weight-semibold);
+  color: var(--sg-color-text);
+  outline: none;
+  width: 150px;
+}
+
+.iconButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sg-color-accent);
+  transition: transform var(--sg-transition-fast);
+}
+
+.iconButton:hover {
+  transform: scale(1.15);
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 1000;
+  background-color: var(--sg-color-white);
+  border: var(--sg-border-width) solid var(--sg-color-black);
+  box-shadow: var(--sg-shadow-md);
+  border-radius: var(--sg-radius-none);
+  padding: var(--sg-space-4);
+  width: 300px;
+  animation: datePop var(--sg-transition-fast);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sg-space-3);
+  padding-bottom: var(--sg-space-2);
+  border-bottom: var(--sg-border-width) solid var(--sg-color-border-light);
+}
+
+.monthLabel {
+  font-family: var(--sg-font-family);
+  font-weight: var(--sg-font-weight-bold);
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sg-color-text);
+}
+
+.navButton {
+  background: var(--sg-color-black);
+  border: var(--sg-border-width) solid var(--sg-color-black);
+  color: var(--sg-color-white);
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--sg-transition-fast);
+  border-radius: var(--sg-radius-none);
+}
+
+.navButton:hover {
+  background-color: var(--sg-color-accent);
+  color: var(--sg-color-white);
+}
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.weekHeader {
+  font-family: var(--sg-font-family);
+  font-size: 0.75rem;
+  font-weight: var(--sg-font-weight-bold);
+  color: var(--sg-color-accent);
+  padding-bottom: var(--sg-space-3);
+  text-transform: uppercase;
+}
+
+.dayCell {
+  padding: 2px;
+}
+
+.dayButton {
+  width: 34px;
+  height: 34px;
+  border: var(--sg-border-width) solid transparent;
+  background: transparent;
+  font-family: var(--sg-font-family);
+  font-size: 0.8125rem;
+  font-weight: var(--sg-font-weight-semibold);
+  color: var(--sg-color-text);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--sg-transition-fast);
+  border-radius: var(--sg-radius-none);
+}
+
+.dayButton:hover:not(.disabled) {
+  background-color: var(--sg-color-bg-hover);
+  border-color: var(--sg-color-accent);
+  color: var(--sg-color-accent);
+}
+
+.dayFocused {
+  border-color: var(--sg-color-accent) !important;
+  outline: 2px solid var(--sg-color-accent);
+}
+
+.daySelected {
+  background-color: var(--sg-color-accent) !important;
+  color: var(--sg-color-white) !important;
+  border-color: var(--sg-color-accent) !important;
+  font-weight: var(--sg-font-weight-bold);
+  box-shadow: 2px 2px 0px var(--sg-color-black);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes datePop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

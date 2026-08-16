@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.verticalContainer {
+  flex-direction: row;
+  gap: var(--sg-space-6);
+}
+
+.tablist {
+  display: flex;
+  border-bottom: var(--sg-border-width) solid var(--sg-color-black);
+  gap: var(--sg-space-2);
+  position: relative;
+  background-color: var(--sg-color-white);
+  padding: 0 var(--sg-space-2);
+}
+
+.verticalTablist {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: var(--sg-border-width) solid var(--sg-color-black);
+  padding: var(--sg-space-2) 0;
+  min-width: 200px;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sg-space-2);
+  padding: var(--sg-space-3) var(--sg-space-5);
+  font-family: var(--sg-font-family);
+  font-size: 0.9375rem;
+  font-weight: var(--sg-font-weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sg-color-text-muted);
+  background: transparent;
+  border: var(--sg-border-width) solid transparent;
+  border-bottom: none;
+  margin-bottom: -2px;
+  cursor: pointer;
+  outline: none;
+  transition: all var(--sg-transition-fast);
+}
+
+.tab:hover:not(.disabled) {
+  color: var(--sg-color-accent);
+  background-color: var(--sg-color-bg-hover);
+}
+
+.tabSelected {
+  color: var(--sg-color-white);
+  background-color: var(--sg-color-accent);
+  border-color: var(--sg-color-accent);
+  box-shadow: 4px -4px 0px var(--sg-color-black);
+}
+
+.verticalTablist .tab {
+  border: var(--sg-border-width) solid transparent;
+  border-right: none;
+  margin-bottom: 0;
+  margin-right: -2px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.verticalTablist .tabSelected {
+  border-color: var(--sg-color-accent);
+  box-shadow: -4px 4px 0px var(--sg-color-black);
+}
+
+.tab:focus-visible {
+  outline: var(--sg-focus-outline);
+  outline-offset: -2px;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.panel {
+  padding: var(--sg-space-6) var(--sg-space-4);
+  background-color: var(--sg-color-white);
+  border: var(--sg-border-width) solid var(--sg-color-black);
+  border-top: none;
+  outline: none;
+  flex: 1;
+}
+
+.panel:focus-visible {
+  outline: var(--sg-focus-outline);
+}

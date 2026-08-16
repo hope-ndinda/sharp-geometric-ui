@@ -1,0 +1,96 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border: var(--sg-border-width) solid var(--sg-color-black);
+  box-shadow: var(--sg-shadow-md);
+  background-color: var(--sg-color-white);
+  border-radius: var(--sg-radius-none);
+  width: 100%;
+}
+
+.item {
+  border-bottom: var(--sg-border-width) solid var(--sg-color-black);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.header {
+  margin: 0;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--sg-space-4) var(--sg-space-6);
+  font-family: var(--sg-font-family);
+  font-size: 1.05rem;
+  font-weight: var(--sg-font-weight-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sg-color-text);
+  background-color: var(--sg-color-white);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  transition: all var(--sg-transition-fast);
+}
+
+.triggerIndex {
+  font-family: var(--sg-font-family);
+  color: var(--sg-color-accent);
+  margin-right: 0.75rem;
+}
+
+.trigger:hover:not(:disabled) {
+  background-color: var(--sg-color-accent);
+  color: var(--sg-color-white);
+}
+
+.trigger:hover:not(:disabled) .triggerIndex {
+  color: var(--sg-color-white);
+}
+
+.trigger:focus-visible {
+  outline: var(--sg-focus-outline);
+  outline-offset: -3px;
+}
+
+.chevron {
+  transition: transform var(--sg-transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.content {
+  padding: var(--sg-space-5) var(--sg-space-6) var(--sg-space-6);
+  font-family: var(--sg-font-family);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--sg-color-text);
+  border-top: var(--sg-border-width) solid var(--sg-color-border-light);
+  background-color: var(--sg-color-bg-hover);
+  animation: accordionExpand var(--sg-transition-fast);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes accordionExpand {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
